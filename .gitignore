@@ -1,0 +1,10 @@
+.DS_Store
+.agignore
+node_modules
+bower_components
+/selenium
+/coverage
+/app/assets
+/application
+/modules
+/hands-on-exercises

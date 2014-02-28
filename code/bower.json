@@ -1,0 +1,12 @@
+{
+  "name": "Oreilly-AngluarJS-Foundation",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "latest",
+    "angular-route": "latest",
+    "angular-animate": "latest",
+    "angular-mocks": "latest",
+    "font-awesome": "~4.0.3",
+    "jquery": "2.0.0"
+  }
+}

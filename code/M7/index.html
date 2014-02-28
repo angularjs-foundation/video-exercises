@@ -1,0 +1,24 @@
+<!DOCTYPE html> 
+<html ng-app="MyApp">
+<head>
+<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../shared.css" />
+<link rel="stylesheet" type="text/css" href="./styles.css" />
+<link rel="stylesheet" type="text/css" href="./animations.css" />
+</head>
+<body>
+
+  <div ng-init="items=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" class="grid">
+    <div class="filter">
+      <input placeholder="filter" ng-model="f" />
+   </div>
+    <div ng-repeat="item in items | filter:f" class="cell repeat-animation">
+      {{item}}
+    </div>
+  </div>
+
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

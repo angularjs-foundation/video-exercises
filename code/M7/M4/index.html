@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html ng-app="MyApp">
+<head>
+  <link rel="stylesheet" type="text/css" href="../../bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="../../shared.css" />
+  <link rel="stylesheet" type="text/css" href="./animations.css" />
+</head>
+<body>
+
+  <section>
+    <h2>ngIf</h2>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="on=true">on=true</button>
+      <button class="btn btn-primary" ng-click="on=false">on=false</button>
+    </nav>
+
+    <div ng-if="on" class="panel fade-animation">
+      <p>I am visible when ng-if is true</p>
+    </div>
+  </section>
+
+  <section ng-init="show=true; hide=false">
+    <h2>ngShow / ngHide</h2>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="show=true">show=true</button>
+      <button class="btn btn-primary" ng-click="show=false">show=false</button>
+      <button class="btn btn-disabled" ng-click="show=!show">[toggle]</button>
+    </nav>
+
+    <div ng-show="show" class="panel">
+      <p>I am visible when show is true</p>
+    </div>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="hide=true">hide=true</button>
+      <button class="btn btn-primary" ng-click="hide=false">hide=false</button>
+    </nav>
+
+    <div ng-hide="hide" class="panel">
+      <p>I am visible when hide is false</p>
+    </div>
+  </section>
+
+
+
+  <section ng-controller="RepeatCtrl">
+    <h2>ngRepeat</h2>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="setColors()">Colors</button>
+      <button class="btn btn-primary" ng-click="setStates()">States</button>
+      <button class="btn btn-disabled" ng-click="values=null">[nothing]</button>
+    </nav>
+
+    <div ng-hide="getValues()" class="panel">
+      <p>There are no values</p>
+    </div>
+
+    <div ng-show="getValues()" class="panel">
+      <div ng-repeat="value in getValues()" class="repeat-animation">
+        {{ $index + 1 }}. {{ value }}
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>ngSwitch</h2>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="slide='one'">One</button>
+      <button class="btn btn-primary" ng-click="slide='two'">Two</button>
+      <button class="btn btn-primary" ng-click="slide='three'">Three</button>
+      <button class="btn btn-disabled" ng-click="slide='other'">Other</button>
+    </nav>
+
+    <div ng-switch="slide" class="slides">
+      <div ng-switch-when="one" class="slide-1 switch-animation">
+        Slide 1
+      </div>
+      <div ng-switch-when="two" class="slide-2 switch-animation">
+        Slide 2
+      </div>
+      <div ng-switch-when="three" class="slide-3 switch-animation">
+        Slide 3
+      </div>
+      <div ng-switch-default class="slide-other switch-animation">
+        Other Slide
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>ngInclude</h2>
+
+    <script type="text/ng-template" id="other.html">
+      <div class="slide-2">Other Slide</div>
+    </script>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="tpl='home.html'">Load "home.html"</button>
+      <button class="btn btn-primary" ng-click="tpl='other.html'">Load "other.html"</button>
+      <button class="btn btn-disabled" ng-click="tpl=null">[Load null]</button>
+    </nav>
+
+    <div ng-include="tpl" class="slides"></div>
+  </section>
+
+  <section>
+    <h2>ngModel, ngBlur, ngFocus and ngClass</h2>
+
+    <nav>
+      <button class="btn btn-primary" ng-click="title='Lukas'">Set value as "lukas"</button>
+      <button class="btn btn-disabled" ng-click="title=null">[Set value as null]</button>
+    </nav>
+
+    <p>
+      <span ng-class="{'label-success':focus}"
+            class="label label-default">Focus!</span>
+      <span ng-class="{'label-warning':!focus}"
+            class="label label-default">Blur!</span>
+    </p>
+
+    <p>
+      <input
+        ng-model="title"
+        class="form-control"
+        ng-focus="focus=true"
+        ng-blur="focus=false"
+        placeholder="Enter a title for your book" />
+    </p>
+
+    <div class="panel">
+      <p>The title of your book is <strong>
+        {{ title.length ? title : "No Name" }}
+      </strong></p>
+    </div>
+  </section>
+
+  <section>
+    <h2>ngSubmit</h2>
+
+    <form name="myForm" ng-submit="submit()" ng-controller="FormCtrl" novalidate>
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" ng-model="name" required />
+      </div>
+      <div class="form-group">
+        <label>Age:</label>
+        <select ng-model="age" ng-options="age for age in generateAges()">
+        </select>
+      </div>
+      <input type="submit" />
+    </form>
+  </section>
+
+  <script type="text/javascript" src="../../bower_components/jquery/jquery.js"></script>
+  <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../../bower_components/angular-animate/angular-animate.js"></script>
+  <script type="text/javascript" src="./animations.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

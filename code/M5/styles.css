@@ -1,0 +1,14 @@
+.user-listing {
+  padding:3px;
+  display:block;
+}
+.user-listing:hover {
+  background:#444;
+  color:white;
+}
+.right-col {
+  width:50%;
+  right:50px;
+  top:50px;
+  position:fixed;
+}

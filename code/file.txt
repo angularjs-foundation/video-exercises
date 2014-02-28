@@ -1,0 +1,5 @@
+      <p>
+        <span ng-class="{'label-success':focus}" class="label label-default">Focus!</span>
+        <span ng-class="{'label-warning':!focus}" class="label label-default">Blur!</span>
+      </p>
+

@@ -1,0 +1,53 @@
+.fade-animation.ng-enter,
+.fade-animation.ng-leave {
+  -webkit-transition:0.5s linear all;
+  transition:0.5s linear all;
+}
+
+.fade-animation.ng-enter { opacity: 0; }
+.fade-animation.ng-enter.ng-enter-active { opacity: 1; }
+
+.fade-animation.ng-leave { opacity: 1; }
+.fade-animation.ng-leave.ng-leave-active { opacity: 0; }
+
+.repeat-animation.ng-enter {
+  position:relative;
+  opacity:0;
+  -webkit-animation:0.5s slide_enter_animation;
+  animation:0.5s slide_enter_animation;
+}
+
+.repeat-animation.ng-leave {
+  position:relative;
+  -webkit-animation:0.5s slide_leave_animation;
+  animation:0.5s slide_leave_animation;
+}
+
+.repeat-animation.ng-enter-stagger,
+.repeat-animation.ng-leave-stagger {
+  -webkit-animation-delay:0.2s;
+  animation-delay:0.2s;
+
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+@-webkit-keyframes slide_enter_animation {
+  from { opacity:0; left:100px; }
+  to { opacity:1; left:0; }
+}
+
+@keyframes slide_enter_animation {
+  from { opacity:0; left:100px; }
+  to { opacity:1; left:0; }
+}
+
+@-webkit-keyframes slide_leave_animation {
+  from { opacity:1; left:0 }
+  to { opacity:0; left:-100px; }
+}
+
+@keyframes slide_leave_animation {
+  from { opacity:1; left:0; }
+  to { opacity:0; left:-100px; }
+}

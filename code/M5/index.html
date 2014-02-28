@@ -1,0 +1,38 @@
+<!DOCTYPE html> 
+<html ng-app="MyApp">
+<head>
+<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="../shared.css" />
+<link rel="stylesheet" type="text/css" href="./styles.css" />
+</head>
+<body>
+
+  <div class="row">
+
+    <div class="left-col" class="page-list" ng-controller="ListCtrl">
+      <a href="" ng-repeat="user in users track by user.id" ng-click="selectUser(user)" class="user-listing">
+        {{ user.first_name }} {{ user.last_name }}
+      </a>
+    </div>
+
+    <div class="right-col" class="page-details" ng-controller="DetailCtrl">
+      <div ng-if="!currentUser" class="panel">
+        <p>You have <strong>not selected an employee</strong></p>
+      </div>
+      <div ng-if="currentUser" class="panel row">
+        <img ng-src="{{ currentUser.picture }}" class="col-md-4" />
+        <div class="col-md-8">
+          <p><strong>Name: </strong> {{ currentUser.first_name }} {{ currentUser.last_name }}</p>
+          <p><strong>Email: </strong> {{ currentUser.email }}</p>
+          <p><strong>Company: </strong> {{ currentUser.company }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="../bower_components/angular/angular-route.js"></script>
+  <script type="text/javascript" src="./app.js"></script>
+</body>
+</html>

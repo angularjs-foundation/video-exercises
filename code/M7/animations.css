@@ -1,0 +1,47 @@
+.repeat-animation {
+  position:relative;
+}
+
+.repeat-animation.ng-enter-stagger,
+.repeat-animation.ng-leave-stagger,
+.repeat-animation.ng-move-stagger {
+  /* notice how we're using animation instead of transition here */ 
+  -webkit-animation-delay:0.5s;
+  animation-delay:0.5s;
+
+  /* yes we still need to do this too */
+  -webkit-animation-duration:0;
+  animation-duration:0;
+}
+
+.repeat-animation.ng-move,
+.repeat-animation.ng-enter {
+  opacity:0;
+  -webkit-animation:enter_animation 0.3s;
+  animation:enter_animation 0.3s;
+}
+
+.repeat-animation.ng-leave {
+  -webkit-animation:leave_animation 0.3s;
+  animation:leave_animation 0.3s;
+}
+
+@-webkit-keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@keyframes enter_animation {
+  from { opacity:0; }
+  to { opacity:1; }
+}
+
+@-webkit-keyframes leave_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}
+
+@keyframes leave_animation {
+  from { opacity:1; }
+  to { opacity:0; }
+}

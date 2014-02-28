@@ -1,0 +1,16 @@
+<!DOCTYPE html> 
+<html ng-app>
+<body ng-init="title='Angular'; items = [0,1,2,3];">
+  Hello {{ title }}
+
+  <input type="text" ng-model="q" />
+
+  <div ng-repeat="item in items | filter:q" ng-hide="hide">
+    {{ item }}
+  </div>
+
+  <button ng-click="hide=!hide">Toggle Show/Hide</button>
+  <button ng-click="items[items.length] = items.length">Add New Item</button>
+<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+</body>
+</html>
