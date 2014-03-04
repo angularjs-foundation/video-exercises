@@ -8,12 +8,16 @@ $(function() {
     $.ajax({
       url: '/' + path + '/readme.md'
     }).success(function(content) {
-      content = "All code for this module can be found under `" + path + "`\n\n" +
-                "Please visit the directory by running the command `cd "+path+"`\n\n-------\n\n" + content;
+      content = "## Where to find the code\n\n" +
+                "All code for this module can be found under `" + path + "`.\n\n" +
+                "Please visit the directory by running the command `cd "+path+"`.\n\n----\n\n" + content;
+      content = content.replace('# Module ' + module, '');
       var html = converter.makeHtml(content);
+
       readmeElm.html(html);
     }).error(function() {
-      var content = 'Please install the demo-app by running `./scripts/install.sh` and then refresh this page';
+      var content = "## Installation Required\n\n" +
+                    'Please install the demo-app by running `./scripts/install.sh` and then refresh this page';
       var html = converter.makeHtml(content);
       readmeElm.html(html);
     });
