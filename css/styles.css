@@ -256,3 +256,19 @@ header .avatar {
     display:block;
   }
 }
+
+.readme {
+  border:1px solid #ddd;
+  padding:20px;
+  margin-bottom:20px;
+  background:#f9f9f9;
+}
+
+.readme h1 {
+  font-size:20px;
+}
+
+.readme h2 {
+  font-size:15px;
+}
+

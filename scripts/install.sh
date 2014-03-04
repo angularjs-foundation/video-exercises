@@ -1,6 +1,8 @@
-NG_TUBE_REPO="git@github.com:yearofmoo/oreilly-ng-tube.git"
+npm install
 
-MODULES="M1 M2 M3 M4 M5 M6 M7"
+NG_TUBE_REPO="git@github.com:angularjs-foundation/video-app.git"
+
+MODULES="M1 M2 M3"
         
 
 APP_DIR="./application"
@@ -19,7 +21,10 @@ fi
 mkdir $MODULES_DIR
 for MODULE in $MODULES; do
   CURRENT_MODULE_DIR=$MODULES_DIR/$MODULE
-  git --git-dir=$APP_DIR/.git checkout -q $MODULE
-  cp -R $APP_DIR $CURRENT_MODULE_DIR
+  cd $APP_DIR
+  git checkout -q $MODULE
+  cp -R . ../$CURRENT_MODULE_DIR
   echo "Downloaded $MODULE into $CURRENT_MODULE_DIR" 
+
+  cd ..
 done

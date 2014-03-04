@@ -1,0 +1,7 @@
+{
+  "name": "angularjs-foundation-video-exercises",
+  "version": "0.0.0",
+  "devDependencies": {
+    "http-server": "~0.6.1"
+  }
+}
