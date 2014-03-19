@@ -2,7 +2,7 @@ npm install
 
 NG_TUBE_REPO="git@github.com:angularjs-foundation/video-app.git"
 
-MODULES="M1 M2 M3 M4 M5"
+MODULES="M1 M2 M3 M4 M5 M6 M7"
         
 
 APP_DIR="./application"
