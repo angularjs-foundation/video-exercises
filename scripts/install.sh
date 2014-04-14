@@ -28,3 +28,17 @@ for MODULE in $MODULES; do
 
   cd ..
 done
+
+CURRENT_MODULE_DIR=$MODULES_DIR/M1
+cp $CURRENT_MODULE_DIR/package.json $MODULES_DIR/package.json
+cd $MODULES_DIR
+npm i
+cd - 
+
+for MODULE in $MODULES; do
+  CURRENT_MODULE_DIR=$MODULES_DIR/$MODULE
+  cd $CURRENT_MODULE_DIR
+  ln -s ../node_modules
+  echo "Linked node_modules within $CURRENT_MODULE_DIR/node_modules"
+  cd -
+done
