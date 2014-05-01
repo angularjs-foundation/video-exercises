@@ -33,16 +33,25 @@ git clone !NG_TUBE_REPO! !APP_DIR! -q
 mkdir %MODULES_DIR%
 
 rem use git to get list of branches to cycle through (skips head)
+if exist scripts\resdep.cmd del scripts\resdep.cmd
 cd %APP_DIR%
 for /f "skip=1 tokens=2 delims=/" %%M in ('git branch -r') do @if "%%M" NEQ "master" ( 
  set CURRENT_MODULE_DIR=%MODULES_DIR%\%%M
  git checkout %%M -q
  mkdir ..\!CURRENT_MODULE_DIR!
  @xcopy *.* ..\!CURRENT_MODULE_DIR!\*.* /s /e /h /y /q
+ @echo @echo Running npm for module %%M >> ..\scripts\resdep.cmd
+ @echo cd !CURRENT_MODULE_DIR! >> ..\scripts\resdep.cmd
+ @echo cmd /c npm i --silent >> ..\scripts\resdep.cmd
+ @echo cd .. >> ..\scripts\resdep.cmd
+ @echo cd .. >> ..\scripts\resdep.cmd
  @echo Downloaded %%M into !CURRENT_MODULE_DIR! 
 )
+@echo.
+@echo Resolving dependencies
 cd ..
 
+scripts\resdep.cmd
 goto :DONE
 
 :MODULE_DIR_EXISTS
