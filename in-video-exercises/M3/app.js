@@ -2,14 +2,16 @@ angular.module('MyApp', ['ngRoute'])
 
   .constant('VERSION', '1.1')
 
-  .config(['$routeProvider', function($routeProvider) {
+  .config(['$routeProvider', '$locationProvider',
+   function($routeProvider,   $locationProvider) {
+    $locationProvider.html5Mode(true);
     $routeProvider.when('/',{
       controller : 'HomeCtrl',
       templateUrl : './home.html'
     });
     $routeProvider.when('/info',{
       controller : 'InfoCtrl',
-      templateUrl : './home.html'
+      templateUrl : './info.html'
     });
   }])
 

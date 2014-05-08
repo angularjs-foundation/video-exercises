@@ -1,8 +1,8 @@
 <!DOCTYPE html> 
 <html ng-app="MyApp">
 <head>
-<link rel="stylesheet" type="text/css" href="../bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="../shared.css" />
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="./css/shared.css" />
 <link rel="stylesheet" type="text/css" href="./styles.css" />
 </head>
 <body>
@@ -10,7 +10,7 @@
   <div class="row">
 
     <div class="left-col" class="page-list" ng-controller="ListCtrl">
-      <a href="" ng-repeat="user in users track by user.id" ng-click="selectUser(user)" class="user-listing">
+      <a href="" ng-repeat="user in users track by user.id" ng-mouseenter="selectUser(user)" class="user-listing">
         {{ user.first_name }} {{ user.last_name }}
       </a>
     </div>
@@ -31,8 +31,8 @@
 
   </div>
 
-  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="../bower_components/angular/angular-route.js"></script>
+  <script type="text/javascript" src="./angular.js"></script>
+  <script type="text/javascript" src="./angular-route.js"></script>
   <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

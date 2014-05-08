@@ -1,8 +1,8 @@
 <!DOCTYPE html> 
 <html ng-app="MyApp">
 <head>
-  <link rel="stylesheet" type="text/css" href="../bootstrap.css" />
-  <link rel="stylesheet" type="text/css" href="../shared.css" />
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="./css/shared.css" />
 </head>
 <body>
 
@@ -14,7 +14,7 @@
       <button class="btn btn-primary" ng-click="on=false">on=false</button>
     </nav>
 
-    <div ng-if="!on" class="panel">
+    <div ng-if="on" class="panel">
       <p>I am visible when ng-if is true</p>
     </div>
   </section>
@@ -53,12 +53,14 @@
       <button class="btn btn-disabled" ng-click="values=null">[nothing]</button>
     </nav>
 
-    <div ng-hide="getValues()" class="panel">
+    <div ng-if="!getValues()" class="panel">
       <p>There are no values</p>
     </div>
 
-    <div ng-show="getValues()" class="panel">
-      <div ng-repeat="value in getValues()">
+    <div ng-if="getValues()" class="panel">
+      <style>.orange { color:orange; }</style>
+      <input ng-model="search" />
+      <div ng-repeat="value in getValues() | filter:search">
         {{ $index + 1 }}. {{ value }}
       </div>
     </div>
@@ -71,21 +73,21 @@
       <button class="btn btn-primary" ng-click="slide='one'">One</button>
       <button class="btn btn-primary" ng-click="slide='two'">Two</button>
       <button class="btn btn-primary" ng-click="slide='three'">Three</button>
-      <button class="btn btn-disabled" ng-click="slide='other'">Other</button>
+      <button class="btn btn-disabled" ng-click="slide='ot3442342her'">Other</button>
     </nav>
 
     <div ng-switch="slide" class="slides">
       <div ng-switch-when="one" class="slide-1">
         Slide 1
       </div>
-      <div ng-switch-when="one" class="slide-2">
+      <div ng-switch-when="two" class="slide-2">
         Slide 2
       </div>
       <div ng-switch-when="three" class="slide-3">
         Slide 3
       </div>
-      <div ng-switch-default class="slide-other">
-        Other Slide
+      <div ng-switch-default class="slide-other" ng-controller="Other2Ctrl">
+        {{ title }}
       </div>
     </div>
   </section>
@@ -97,9 +99,14 @@
       <div class="slide-2">Other Slide</div>
     </script>
 
+    <script type="text/ng-template" id="other2.html">
+      <div class="slide-2" ng-controller="Other2Ctrl">{{ title }}</div>
+    </script>
+
     <nav>
       <button class="btn btn-primary" ng-click="tpl='home.html'">Load "home.html"</button>
       <button class="btn btn-primary" ng-click="tpl='other.html'">Load "other.html"</button>
+      <button class="btn btn-primary" ng-click="tpl='other2.html'">Load "other2.html"</button>
       <button class="btn btn-disabled" ng-click="tpl=null">[Load null]</button>
     </nav>
 
@@ -140,22 +147,26 @@
   <section>
     <h2>ngSubmit</h2>
 
-    <form name="myForm" ng-submit="submit()" ng-controller="FormCtrl" novalidate>
+    <form name="myForm" ng-submit="submitted=true; submit()" ng-controller="FormCtrl" novalidate>
       <div class="form-group">
         <label>Name:</label>
-        <input type="text" ng-model="name" required />
+        <input type="text" ng-model="name" name="myName" required ng-maxlength="10" />
+        <div ng-if="submitted">
+          <div ng-if="myForm.myName.$error.required">You did not enter a name</div>
+          <div ng-if="myForm.myName.$error.maxlength">Your name is too long</div>
+        </div>
       </div>
       <div class="form-group">
         <label>Age:</label>
-        <select ng-model="age" ng-options="age for age in generateAges()">
+        <select ng-model="age" ng-options="age as age group by groupAge(age) for age in generateAges()">
         </select>
       </div>
       <input type="submit" />
     </form>
   </section>
 
-  <script type="text/javascript" src="../bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="../bower_components/angular/angular-route.js"></script>
+  <script type="text/javascript" src="./angular.js"></script>
+  <script type="text/javascript" src="./angular-route.js"></script>
   <script type="text/javascript" src="./app.js"></script>
 </body>
 </html>

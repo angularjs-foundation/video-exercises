@@ -1,0 +1,46 @@
+body, html {
+  margin:0;
+  padding:20px;
+}
+
+section {
+  border-bottom:1px solid #ddd;
+  padding:20px 0;
+}
+
+.panel {
+  border-radius:10px;
+  background:#eee;
+  padding:10px 20px;
+}
+
+.panel > p {
+  padding:0;
+  margin:0;
+}
+
+nav {
+  margin-bottom:20px;
+}
+
+.slides {
+  overflow:hidden;
+  width:400px;
+  height:150px;
+  margin-top:10px;
+  position:relative;
+}
+.slides > div {
+  top:0;
+  position:absolute;
+  width:100%;
+  color:white;
+  border:2px solid black;
+  position:relative;
+  height:150px;
+}
+
+.slide-1 { background:red; }
+.slide-2 { background:green; }
+.slide-3 { background:blue; }
+.slide-other { background:#999; }

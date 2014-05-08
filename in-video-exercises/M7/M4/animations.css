@@ -10,6 +10,23 @@
 .fade-animation.ng-leave { opacity: 1; }
 .fade-animation.ng-leave.ng-leave-active { opacity: 0; }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .repeat-animation.ng-enter {
   position:relative;
   opacity:0;

@@ -1,5 +1,9 @@
 angular.module('MyApp', [])
 
+  .controller('Other2Ctrl', ['$scope', function($scope) {
+    $scope.title = 'Other Slide 2...';
+  }])
+
   .controller('RepeatCtrl', ['$scope', function($scope) {
     $scope.setColors = function() {
       $scope.values = ['cyan','red','green','blue','orange','yellow'];
@@ -17,10 +21,14 @@ angular.module('MyApp', [])
   .controller('FormCtrl', ['$scope', function($scope) {
     $scope.generateAges = function() {
       var ages = [];
-      for(var i=18; i <= 60;i++) {
+      for(var i=1; i <= 25;i++) {
         ages.push(i);
       }
       return ages;
+    };
+
+    $scope.groupAge = function(age) {
+      return age < 18 ? 'under aged' : 'adult';
     };
 
     $scope.submit = function() {

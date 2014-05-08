@@ -19,14 +19,13 @@ angular.module('MyApp', [])
     });
 
     $scope.selectUser = function(user) {
-      usersService.setCurrentUser(user);
-      $rootScope.$broadcast('userChanged');
+      $rootScope.$broadcast('userChanged', user);
     };
   }])
 
   .controller('DetailCtrl', ['$scope', 'usersService',
                      function($scope, usersService) {
-    $scope.$on('userChanged', function(event) {
-      $scope.currentUser = usersService.getCurrentUser();
+    $scope.$on('userChanged', function(event, user) {
+      $scope.currentUser = user;
     });
   }])
