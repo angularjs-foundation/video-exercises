@@ -62,3 +62,7 @@ The goal is to work through the exercises until all the tests pass.
 ![tests_pass](https://cloud.githubusercontent.com/assets/590361/2930277/0699515e-d794-11e3-88a1-af374ee1fdc4.png)
 
 ### Success! All Tests are Passing
+
+## Issues
+
+If you have any issues, please file a GitHub issue and we will address it immediately. Thanks!
