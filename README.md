@@ -1,8 +1,8 @@
 # AngularJS Foundation - Hands On Exercises
 
-Welcome to the hands on exercises for the [Build a Strong AngularJS Foundation (http://shop.oreilly.com/product/110000151.do)] course.
+Welcome to the hands on exercises for the [Build a Strong AngularJS Foundation](http://shop.oreilly.com/product/110000151.do) course.
 
-The course was divided into three parts:
+#### The course was divided into three parts
 1. Commentary on a specific AngularJS concept.
 2. A live coding example to illustrate the concept.
 3. Hands on exercises to reinforce the concept.
@@ -61,4 +61,4 @@ The goal is to work through the exercises until all the tests pass.
 
 ![tests_pass](https://cloud.githubusercontent.com/assets/590361/2930277/0699515e-d794-11e3-88a1-af374ee1fdc4.png)
 
-### All Tests are Passing
+### Success! All Tests are Passing
