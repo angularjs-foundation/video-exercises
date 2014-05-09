@@ -16,8 +16,8 @@ Each module has a set of exercises and a suite of failing unit tests. As you wor
 - NodeJS (version v0.10.26 or greater)
 - NPM (version 1.4.4 or greater)
 - Make sure you have `grunt` and `grunt-cli` both installed globally via NPM:
-  - (`sudo npm install -g grunt`
-  - (`sudo npm install -g grunt-cli`
+  - `sudo npm install -g grunt`
+  - `sudo npm install -g grunt-cli`
 
 ## Installation
 
