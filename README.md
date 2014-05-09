@@ -65,4 +65,4 @@ The goal is to work through the exercises until all the tests pass.
 
 ## Issues
 
-If you have any issues, please file a GitHub issue and we will address it immediately. Thanks!
+If you run into any problems, please file a [GitHub Issue](https://github.com/angularjs-foundation/video-exercises/issues) and we will address it immediately. Thanks!
