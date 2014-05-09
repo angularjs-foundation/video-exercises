@@ -25,5 +25,19 @@
 5. Visit the website at `http://localhost:8088`.
 
 ## Hands on Exercises
-When the website is run there will be a series of module pages that contain the instructions on
-how to perform the exercises. (The hands on exercises will be installed inside of `hands-on-exercises`.)
+
+When the website is run there will be a series of modules to work through.
+
+![modules](https://cloud.githubusercontent.com/assets/590361/2930144/5478ba74-d792-11e3-8cd1-d301fd45c4f5.png)
+
+Each module will have individual exercises to work through. (The hands on exercises will be installed inside of `hands-on-exercises`.)
+
+![module](https://cloud.githubusercontent.com/assets/590361/2930145/5acf6bc0-d792-11e3-8607-65622a0f49e3.png)
+
+Each module starts with a series of failing tests.
+
+![tests_fail](https://cloud.githubusercontent.com/assets/590361/2930276/03f99dc8-d794-11e3-850f-71eb7437daaf.png)
+
+The goal is to work through the exercises until all the tests pass.
+
+![tests_pass](https://cloud.githubusercontent.com/assets/590361/2930277/0699515e-d794-11e3-88a1-af374ee1fdc4.png)
