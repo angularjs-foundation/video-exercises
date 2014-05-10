@@ -6,7 +6,7 @@ $(function() {
     var module = readmeElm.data('module');
     var path = 'hands-on-exercises/M' + module;
     $.ajax({
-      url: '/' + path + '/readme.md'
+      url: '/' + path + '/README.md'
     }).success(function(content) {
       content = "## Where to find the code\n\n" +
                 "All code for this module can be found under `" + path + "`.\n\n" +
