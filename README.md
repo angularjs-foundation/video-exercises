@@ -11,7 +11,7 @@ This is the third section of the course and it is time for us to work through th
 
 Each module has a set of exercises and a suite of failing unit tests. As you work through the exercises, the tests will start to pass. You will know that you have successfully completed the exercises when all of the tests are passing.
 
-Checkout master from the angularjs-foundation/video-app repo to see the completed application.
+Checkout `master` from the [angularjs-foundation/video-app](https://github.com/angularjs-foundation/video-app) repository to see the completed application and solutions to the exercises.
 
 ## Prerequisites
 - Git
