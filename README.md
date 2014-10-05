@@ -15,19 +15,24 @@ Checkout `master` from the [angularjs-foundation/video-app](https://github.com/a
 
 ## Prerequisites
 - Git
-- NodeJS (version v0.10.26 or greater)
-- NPM (version 1.4.4 or greater)
-- Make sure you have `grunt` and `grunt-cli` both installed globally via NPM:
+- NodeJS (version `v0.10.26` or greater)
+- NPM (version `1.4.4` or greater)
+- Make sure you have the following NPM plugins installed **globally** (via `-g`):
   - `sudo npm install -g grunt`
   - `sudo npm install -g grunt-cli`
+  - `sudo npm install -g karma`
+  - `sudo npm install -g karma-cli`
+  - `sudo npm install -g http-server`
 
 ## Installation
+
+First run `npm cache clear` in the console (for Windows use the `nodejs command prompt`).
 
 ### Windows
 1. clone by repo: `git clone https://github.com/angularjs-foundation/video-exercises.git`
 2. go to the directory: `cd video-exercises`
 3. run the installation: `scripts\install.cmd`
-4. run the server: `scripts\server.cmd`
+4. run the server: `scripts\server.cmd`. **MAKE SURE that this is NOT run directly from inside of the `scripts\` directory.
 5. Visit the website at `http://localhost:8088`.
 
 ### Mac / Linux
